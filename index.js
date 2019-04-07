@@ -1,5 +1,4 @@
 const path = require('path');
-const r = require('./web/routing/base.router');
 
 require('dotenv').config({
   path: path.join(__dirname, 'config', 'app.env')
@@ -11,7 +10,7 @@ const app = express();
 
 const port = process.env.PORT;
 
-app.use('/', r);
+app.use('/', require('./web/routing/base.router'));
 
 app.listen(port, () => {
   console.log(`Server listenning on port ${port}`);
