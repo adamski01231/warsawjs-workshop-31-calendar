@@ -10,7 +10,8 @@ const app = express();
 
 const port = process.env.PORT;
 
-app.use('/', require('./web/routing/base.router'));
+require('./web/routing/base.router')(app);
+require('./web/routing/calendar.router')(app);
 
 app.listen(port, () => {
   console.log(`Server listenning on port ${port}`);

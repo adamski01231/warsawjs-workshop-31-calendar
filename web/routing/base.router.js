@@ -6,4 +6,6 @@ router.get('/', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
-module.exports = router;
+module.exports = (app) => {
+  app.use(router);
+};
